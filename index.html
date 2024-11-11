@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name ="viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Navi </title>
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+     crossorigin="anonymous" 
+     referrerpolicy="no-referrer" />
+    <link rel ="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <style>
+        .highlight{
+            color:pink;
+        }
+    </style>
+
+     
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Nav<span class="highlight">!</span></a></div>
+           
+            <ul class="links">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="services.html">Services</a></li>
+          </ul>
+          
+            
+
+            </div>
+        </div>
+        <div class="text">
+            
+            <div class="top-left"> Know all the fees.<br /> No Surprises  <br /></div>
+            
+        </div>
+        <main>
+            <div id = "information-container">
+                <h2></h2>
+                <input type="text" id="county" placeholder="Enter County in Fl">
+                <input type="text"  id="zipcode" placeholder="Enter Zipcode">
+
+                <button id="search">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Search</span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                  </button>
+            <div id="message"></div>    
+                
+            </div>
+        </main>
+        <button class="logout-button" id="logout-btn">Logout</button>
+        <script src="script3.js"></script>
+        <script>
+    // Check if the element exists before trying to set innerHTML
+          // Ensure this code runs when the DOM is fully loaded
+          document.addEventListener('DOMContentLoaded', function () {
+          const messageElement = document.getElementById('message');
+
+    // Check if the user is logged in (based on messageElement or other criteria)
+          if (messageElement) {
+            messageElement.innerHTML = "Welcome back!";
+    }     else {
+            console.log("Element not found");
+
+        // If the user is not logged in, redirect to the login page
+            window.location.href = "signin.html"; // Replace with your actual login page URL
+            return; // Exit the function early if the user is not logged in
+    }
+
+    // Logout button logic
+          const logoutBtn = document.getElementById('logout-btn');
+          if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
+            console.log('Logout button clicked');
+            // Redirect the user to the sign-in page
+            window.location.href = 'signin.html'; // Replace with your actual sign-in page URL
+        });
+    }
+});
+
+
+        </script>
+      
+
+</body>
+</html>

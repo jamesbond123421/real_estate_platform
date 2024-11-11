@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body {
+            background-image: url('background.jpeg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ensure body takes full height */
+        }
+
+        .highlight {
+            color: pink;
+        }
+
+        .navbar1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo a {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .form1 {
+            max-width: 400px;
+            margin: 100px auto; /* Center the form with top margin */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Form background */
+            border-radius: 8px;
+            z-index: 5;
+            position: relative; /* Ensure form stays on top */
+        }
+
+        .title1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        .message {
+            font-size: 16px;
+            color: lightgray;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: white;
+            color: black; /* Ensure text is visible */
+        }
+
+        .submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .signin {
+            text-align: center;
+            color: white;
+        }
+
+        .signin a {
+            color: pink;
+            text-decoration: none;
+        }
+
+        .submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <div class="navbar1">
+        <button class="logo" onclick="window.close()">
+            <a href="#">Nav<span class="highlight">!</span></a>
+        </button>
+    </div>
+
+    <!-- Modify form with onsubmit handler -->
+    <form class="form1" onsubmit="redirectToAccount(event)">
+        <p class="title1">Register</p>
+        <p class="message">Signup now and get full access to our app.</p>
+
+        <div class="flex">
+            <label>
+                <input class="input" type="text" placeholder="Firstname" required>
+                <span>Firstname</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" placeholder="Lastname" required>
+                <span>Lastname</span>
+            </label>
+        </div>  
+
+        <label>
+            <input class="input" type="email" placeholder="Email" required>
+            <span>Email</span>
+        </label>
+
+        <label>
+            <input class="input" type="password" placeholder="Password" required>
+            <span>Password</span>
+        </label>
+
+        <label>
+            <input class="input" type="password" placeholder="Confirm password" required>
+            <span>Confirm password</span>
+        </label>
+
+        <button class="submit" type="submit">Submit</button>
+
+        <p class="signin">Already have an account? <a href="#">Signin</a></p>
+    </form>
+
+    <script>
+        function redirectToAccount(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Redirect to the user's account page
+            window.location.href = "index.html"; // Replace with actual account page URL
+        }
+    </script>
+</body>
+</html>

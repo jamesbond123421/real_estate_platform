@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            background-image: url('background.jpeg');
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .title {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ff87b4;
+        }
+        .message {
+            font-size: 16px;
+            color: lightgray;
+            margin-bottom: 20px;
+        }
+        .input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 14px;
+        }
+        .submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff87b4;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .submit:hover {
+            background-color: #e76a99;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <p class="title">Sign In</p>
+        <p class="message">Enter your credentials to access your account</p>
+
+        <!-- Sign-in form -->
+        <form onsubmit="redirectToIndex(event)">
+            <label>
+                <input class="input" type="text" id="username" placeholder="Username" required>
+            </label>
+            <label>
+                <input class="input" type="password" id="password" placeholder="Password" required>
+            </label>
+            <button class="submit" type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+         // Simple user credentials (you can later replace this with an actual authentication system)
+         const validUsername = "user";
+         const validPassword = "password123";
+
+        // Redirect to the home page if credentials are valid
+        document.addEventListener('DOMContentLoaded', function () {
+    // Ensure form submission happens only after document is ready
+             document.querySelector('form').addEventListener('submit', redirectToIndex);
+});
+
+        function redirectToIndex(event) {
+    // Prevent the form from actually submitting (page reload)
+            event.preventDefault();
+
+    // Get the values from the input fields
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+    // Check if username and password are not empty
+            if (username && password) {
+                console.log("Valid credentials:", username, password);
+        // Redirect to index.html
+                window.location.href = 'index.html'; // Redirect to your home page or dashboard
+    }       else {
+                alert("Please enter both username and password");
+    }
+}
+
+    </script>
+</body>
+</html>
